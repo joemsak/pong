@@ -11,5 +11,8 @@ window.Match = class Match
     @winner = @_findWinner()
     @game.quit() if @winner isnt undefined
 
+  currentScore: (player) ->
+    player.score
+
   _findWinner: ->
-    _.find(@players, (player) -> player.score is 10)
+    _.find(@players, (player) => @currentScore(player) is 10)

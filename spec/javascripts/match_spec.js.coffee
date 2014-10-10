@@ -17,10 +17,10 @@ describe Match, ->
     match = new Match(game, players)
 
     match.scorePoint(players[0])
-    expect(players[0].score).to.equal 1
+    expect(match.currentScore(players[0])).to.equal 1
 
     match.scorePoint(players[1])
-    expect(players[1].score).to.equal 1
+    expect(match.currentScore(players[1])).to.equal 1
 
   it 'quits the game and declares a winner after a player scores 10 points', ->
     game = new Game
